@@ -1,0 +1,70 @@
+! Testing prefixes
+
+Multichar_Symbols
+%<n%>    ! Noun
+
+%<sg%>   ! Singular
+%<pl%>   ! Plural
+%<prox%> ! Proximate
+%<obv%>  ! Obviative
+%<voc%>  ! Vocative
+%<loc%>  ! Locative
+%<attr%> ! Attributive
+%<prep%> ! Prepositional
+
+%<poss%> ! Possessive
+%<1%>    ! 1st Person
+%<2%>    ! 2nd Person
+%<3%>    ! 3rd Person
+%<incl%> ! Inclusive
+%<excl%> ! Exclusive
+
+%{n%}
+%{k%}    ! The possessive prefixes
+%{o%}
+
+%{a%}
+%{e%} ! singular vocative
+%{w%}      ! dropped after [o]
+
+%{tc%} ! t/c alternation
+%{sθ%} ! s/θ alternation
+
+aa
+ee ! long vowels
+ii
+oo
+
+th ! = theta
+
+@U.POSS.1SG@
+@U.POSS.2SG@
+@U.POSS.3SG@
+@U.POSS.1IN@ ! Which possessive affix is required?
+@U.POSS.1EX@
+@U.POSS.2PL@
+@U.POSS.3PL@
+
+@D.POSS@ ! If no possessive prefix, then no suffix
+
+
+@U.IPOSS.T@
+@U.IPOSS.F@ ! Marked for possession?
+
+@R.PREQ.F@
+@R.PREQ.T@
+@P.PREQ.F@ ! require/set is poss prefix required?
+@P.PREQ.T@
+@U.PREQ.T@
+@U.PREQ.F@ ! Is poss prefix required?
+
+@U.ANIM.T@
+@U.ANIM.F@ ! Is animate?
+
+@U.EM.T@ ! takes 'me' with possession?
+@D.EM@
+
+LEXICON Root
+@U.IPOSS.T@@P.PREQ.T@ N-poss-pre ; ! Nouns with a possessive affix
+@U.IPOSS.T@@P.PREQ.F@ N-poss-pre ;
+@U.IPOSS.F@@P.PREQ.F@ N ;

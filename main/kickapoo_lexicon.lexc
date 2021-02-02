@@ -1,0 +1,154 @@
+! Testing prefixes
+
+Multichar_Symbols
+%<n%>    ! Noun
+
+%<sg%>   ! Singular
+%<pl%>   ! Plural
+%<prox%> ! Proximate
+%<obv%>  ! Obviative
+%<voc%>  ! Vocative
+%<loc%>  ! Locative
+%<attr%> ! Attributive
+%<prep%> ! Prepositional
+
+%<poss%> ! Possessive
+%<1%>    ! 1st Person
+%<2%>    ! 2nd Person
+%<3%>    ! 3rd Person
+%<incl%> ! Inclusive
+%<excl%> ! Exclusive
+
+%{n%}
+%{k%}    ! The possessive prefixes
+%{o%}
+
+%{a%}
+%{e%} ! singular vocative
+%{w%}      ! dropped after [o]
+
+%{tc%} ! t/c alternation
+%{sθ%} ! s/θ alternation
+
+aa
+ee ! long vowels
+ii
+oo
+
+th ! = theta
+
+@U.POSS.1SG@
+@U.POSS.2SG@
+@U.POSS.3SG@
+@U.POSS.1IN@ ! Which possessive affix is required?
+@U.POSS.1EX@
+@U.POSS.2PL@
+@U.POSS.3PL@
+
+@D.POSS@ ! If no possessive prefix, then no suffix
+
+
+@U.IPOSS.T@
+@U.IPOSS.F@ ! Marked for possession?
+
+@R.PREQ.F@
+@R.PREQ.T@
+@P.PREQ.F@ ! require/set is poss prefix required?
+@P.PREQ.T@
+@U.PREQ.T@
+@U.PREQ.F@ ! Is poss prefix required?
+
+@U.ANIM.T@
+@U.ANIM.F@ ! Is animate?
+
+@U.EM.T@ ! takes 'me' with possession?
+@D.EM@
+
+LEXICON Root
+@U.IPOSS.T@@P.PREQ.T@ N-poss-pre ; ! Nouns with a possessive affix
+@U.IPOSS.T@@P.PREQ.F@ N-poss-pre ;
+@U.IPOSS.F@@P.PREQ.F@ N ;
+LEXICON N-poss-pre
+ @U.POSS.1SG@:@U.POSS.1SG@%{n%}^ N ;
+ @U.POSS.2SG@:@U.POSS.2SG@%{k%}^ N ;
+ @U.POSS.3SG@:@U.POSS.3SG@%{o%}^ N ;
+ @U.POSS.1IN@:@U.POSS.1IN@%{k%}^ N ;
+ @U.POSS.1EX@:@U.POSS.1EX@%{n%}^ N ;
+ @U.POSS.2PL@:@U.POSS.2PL@%{k%}^ N ;
+ @U.POSS.3PL@:@U.POSS.3PL@%{o%}^ N ;
+
+
+LEXICON N
+ @R.PREQ.F@ N-preq-f ;
+ @R.PREQ.T@ N-preq-t ;
+
+LEXICON N-preq-f
+ ineni       N-anim ; ! man
+ niicaap     N-anim ; ! doll
+ asamaakaah  N-anim ; ! soldier
+ methoon     N-inan ; ! boat
+ @U.EM.T@koohkoos    N-anim ; ! pig
+ eenikw      N-anim ; ! ant
+ moopi       N-anim ; ! automobile
+ ahkohkw     N-anim ; ! bucket
+ miin        N-anim ; ! berry
+ sekwaahkw   N-anim ; ! cedar tree
+ anaakw      N-anim ; ! star
+ atheny      N-inan ; ! stone
+ ooteen      N-inan ; ! town
+ saethien    N-inan ; ! hunger
+ maateth     N-inan ; ! knife
+ oteemin     N-inan ; ! strawberry
+ mehtekw     N-inan ; ! tree, stick
+ kiisekw     N-inan ; ! sky
+ paas        N-anim ; ! bus
+ mehtotheeni N-anim ; ! Native American
+ kiisethw    N-anim ; ! sun, moon, month
+ saapwahkiih N-inan ; ! street
+ @U.EM.T@sooniaah N-inan ; ! money
+
+LEXICON N-preq-t
+ -ky        N-anim ; ! mother
+ -nehk      N-inan ; ! hand
+ -hci       N-anim ; ! arm
+ -iihkaan   N-anim ; ! friend
+ -ooth      N-anim ; ! father
+
+LEXICON N-anim
+ @U.ANIM.T@ N-iposs ;
+
+LEXICON N-inan
+ @U.ANIM.F@ N-iposs ;
+
+LEXICON N-iposs
+ @U.EM.T@@U.IPOSS.T@%<poss%>:@U.IPOSS.T@em N-poss-post ;
+ @D.EM@@U.IPOSS.T@%<poss%>:@D.EM@@U.IPOSS.T@ N-poss-post ;
+ @U.IPOSS.F@ N-suff ;
+
+LEXICON N-poss-post
+ @U.POSS.1SG@%<1%>%<sg%>:@U.POSS.1SG@         N-suff ;
+ @U.POSS.2SG@%<2%>%<sg%>:@U.POSS.2SG@         N-suff ;
+ @U.POSS.3SG@%<3%>%<sg%>:@U.POSS.3SG@         N-suff ;
+ @U.POSS.1IN@%<1%>%<incl%>:@U.POSS.1IN@^enaan N-suff ;
+ @U.POSS.1EX@%<1%>%<excl%>:@U.POSS.1EX@^enaan N-suff ;
+ @U.POSS.2PL@%<2%>%<pl%>:@U.POSS.2PL@^wa      N-suff ;
+ @U.POSS.3PL@%<3%>%<pl%>:@U.POSS.3PL@^wa      N-suff ;
+
+LEXICON N-suff
+ @U.ANIM.T@ N-suff-anim   ;
+ @U.ANIM.F@ N-suff-inan ;
+ %<loc%>:^eki  # ;
+ %<attr%>:^eki # ; ! TODO redirect correctly instead of ending word
+ %<prep%>:^e   # ;
+
+LEXICON N-suff-anim
+ %<sg%>%<prox%>:^a    # ;
+ %<sg%>%<obv%>:^ani   # ;
+ %<sg%>%<voc%>:^%{e%} # ;
+ %<pl%>%<prox%>:^aki  # ;
+ %<pl%>%<obv%>:^ahi   # ;
+ %<pl%>%<voc%>:^etike # ;
+
+LEXICON N-suff-inan
+ %<sg%>:^i   # ;
+ %<pl%>:^ani # ;

@@ -1,0 +1,59 @@
+Alphabet
+
+A E I O P T C K th S H M N W Y
+a e i o p t c k    s h m n w y ! only one theta
+
+aa ee ii oo
+
+%{n%}:n
+%{k%}:k
+%{o%}:o
+%{tc%}:t
+%{sθ%}:θ
+%{e%}:e
+;
+
+Sets
+
+Con = p t c k th s h m n w y
+      P T C K    S H M N W Y ;
+
+Vow = a e i o aa ee ii oo
+      A E I O ;
+
+LVow = aa ee ii oo ;
+
+Rules
+
+"Remove morpheme boundary"
+  %^:0 <=> _ ;
+
+"Remove hyphen starting dependent nouns"
+  %-:0 <=> _ ;
+
+"Insert -e between prefix and consonant"
+  [%{n%}:ne | %{k%}:ke]  <=> _ %^: (%-:) Con: ;
+
+"Prefixes modified before vowels in independent nouns"
+  [%{n%}:net | %{k%}:ket | %{o%}:ot] <=> _ %^:0 Vow: ;
+
+"i->e and o->oo between net/ket/ot and consonant"
+  [i:e | o:oo] <=> [:net | :ket | :ot] %^: _ Con: ;
+
+"o->0 before o in dependent nouns"
+  %{o%}:0 <=> _ %^: %-: o: ;
+
+"t/c to c before i"
+  %{tc%}:c <=> _ %^: i: ;
+
+"s/θ to s before i"
+  %{sθ%}:s <=> _ %^: i: ;
+
+"singular vocative deleted after final long vowel h"
+  %{e%}:0 <=> LVow: h: %^: _ ;
+
+"final h drops between long weak vowel and singular vocative"
+  h:0 <=> LVow: _ %^: %{e%}: ;
+
+"long weak vowel is shortened for singular vocative"
+  [aa:a | ee:e | ii:i | oo:o] <=> _ h: %^: %{e%}: ;
