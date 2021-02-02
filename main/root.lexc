@@ -61,7 +61,8 @@ th ! = theta
 @U.ANIM.T@
 @U.ANIM.F@ ! Is animate?
 
-@U.EM.T@ ! takes 'me' with possession?
+@P.EM.T@ ! takes 'me' with possession?
+@R.EM.T@
 @D.EM@
 
 LEXICON Root

@@ -17,7 +17,7 @@ LEXICON N-preq-f
  niicaap     N-anim ; ! doll
  asamaakaah  N-anim ; ! soldier
  methoon     N-inan ; ! boat
- @U.EM.T@koohkoos    N-anim ; ! pig
+ @P.EM.T@koohkoos    N-anim ; ! pig
  eenikw      N-anim ; ! ant
  moopi       N-anim ; ! automobile
  ahkohkw     N-anim ; ! bucket
@@ -35,7 +35,7 @@ LEXICON N-preq-f
  mehtotheeni N-anim ; ! Native American
  kiisethw    N-anim ; ! sun, moon, month
  saapwahkiih N-inan ; ! street
- @U.EM.T@sooniaah N-inan ; ! money
+ @P.EM.T@sooniaah N-inan ; ! money
 
 LEXICON N-preq-t
  -ky        N-anim ; ! mother
@@ -51,7 +51,7 @@ LEXICON N-inan
  @U.ANIM.F@ N-iposs ;
 
 LEXICON N-iposs
- @U.EM.T@@U.IPOSS.T@%<poss%>:@U.IPOSS.T@em N-poss-post ;
+ @R.EM.T@@U.IPOSS.T@%<poss%>:@R.EM.T@@U.IPOSS.T@em N-poss-post ;
  @D.EM@@U.IPOSS.T@%<poss%>:@D.EM@@U.IPOSS.T@ N-poss-post ;
  @U.IPOSS.F@ N-suff ;
 
