@@ -80,37 +80,37 @@ Rules
   w:0 <=> _ %^: :e ;
 
 "ww > o pt. 1"
-  w:o <=> _ %^: :w ;
+  w:w <=> _ %^: :w ;
 
 "ww > o pt. 2"
-  w:0 <=> w: %^ _ ;
+  w:0 <=> w: %^: _ ;
 
-"y > 0 between s and a"
-  y:0 <=> s: _ %^: :a ;
+"y > 0 between s and -a"
+  y:0 <=> s: _ %^: :a .#. ;
 
 "y > 0 before i"
   y:0 <=> _ %^: :i ;
 
 "ya > ie after consonant other than s pt. 1"
-  y:i <=> NSCons: _  %^: :a ;
+  y:i <=> NSCon: _  %^: [%{a%}: ] ;
 
 "ya > ie after consonant other than s pt. 2"
-  %{a%}:e <=> NSCons: y: %^ _ ;
+  [%{a%}:e] <=> NSCon: y: %^: _ ;
 
 "ya > ee after s or a pt. 1"
-  y:e <=> [s: | a: ] _ %^: :a ;
+  y:e <=> [s: | a: ] _ %^: [%{a%}: ] \.#. ;
 
 "ya > ee after s or a pt. 2"
-  %{a%}:e <=> [s: | a: ] y: %^: _ ;
+  [%{a%}:e] <=> [s: | a: ] y: %^: _ ;
 
 "ye and yw > i and iw after consonant other than s pt. 1"
-  y:i <=> NSCons: _ %^: :e ;
+  y:i <=> NSCon: _ %^: [%{e%}: | e: | %{voce%}: | :w] ;
 
 "ye and yw > i and iw after consonant other than s pt. 2"
-  %{e%}:0 <=> NSCons: y: %^: _ ;
+  [%{e%}:0 | e:0 | %{voce%}:0] <=> NSCon: y: %^: _ ;
 
 "ye and yw > ii and iiw after s pt. 1"
-  y:ii <=> s: _ %^: :e ;
+  y:ii <=> s: _ %^: [%{e%}: | e:  | %{voce%}: | :w] ;
 
 "ye and yw > ii and iiw after s pt. 2"
-  %{e%}:0 <=> s: y: %^: _ ;
+  [%{e%}:0 | e:0 | %{voce%}:0] <=> s: y: %^: _ ;
