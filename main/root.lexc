@@ -24,11 +24,21 @@ Multichar_Symbols
 %{o%}
 
 %{a%}
-%{e%} ! singular vocative
+%{voce%} ! singular vocative
 %{w%}      ! dropped after [o]
 
+%{e%} ! other suffix e's
+%{etike%}
+%{eki%}
+%{em%}
+%{enaan%}
+%{wa%}
+%{ani%}
+%{aki%}
+%{ahi%}
+
 %{tc%} ! t/c alternation
-%{sθ%} ! s/θ alternation
+%{sth%} ! s/th alternation
 
 aa
 ee ! long vowels
@@ -44,9 +54,16 @@ th ! = theta
 @U.POSS.1EX@
 @U.POSS.2PL@
 @U.POSS.3PL@
+@U.POSS.NONE@
+
+@R.POSS.1SG@
+@R.POSS.NONE@
 
 @D.POSS@ ! If no possessive prefix, then no suffix
 
+@D.POSS.NONE@
+@D.POSS.3SG@
+@D.POSS.3PL@
 
 @U.IPOSS.T@
 @U.IPOSS.F@ ! Marked for possession?
@@ -66,6 +83,6 @@ th ! = theta
 @D.EM@
 
 LEXICON Root
-@U.IPOSS.T@@P.PREQ.T@ N-poss-pre ; ! Nouns with a possessive affix
-@U.IPOSS.T@@P.PREQ.F@ N-poss-pre ;
-@U.IPOSS.F@@P.PREQ.F@ N ;
+@P.PREQ.T@ N-poss-pre ; ! Nouns with a possessive affix
+@P.PREQ.F@ N-poss-pre ;
+@U.POSS.NONE@@P.PREQ.F@ N ;

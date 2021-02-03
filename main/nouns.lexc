@@ -13,29 +13,29 @@ LEXICON N
  @R.PREQ.T@ N-preq-t ;
 
 LEXICON N-preq-f
- ineni       N-anim ; ! man
- niicaap     N-anim ; ! doll
- asamaakaah  N-anim ; ! soldier
- methoon     N-inan ; ! boat
- @P.EM.T@koohkoos    N-anim ; ! pig
- eenikw      N-anim ; ! ant
- moopi       N-anim ; ! automobile
- ahkohkw     N-anim ; ! bucket
- miin        N-anim ; ! berry
- sekwaahkw   N-anim ; ! cedar tree
- anaakw      N-anim ; ! star
- atheny      N-inan ; ! stone
- ooteen      N-inan ; ! town
- saethien    N-inan ; ! hunger
- maateth     N-inan ; ! knife
- oteemin     N-inan ; ! strawberry
- mehtekw     N-inan ; ! tree, stick
- kiisekw     N-inan ; ! sky
- paas        N-anim ; ! bus
- mehtotheeni N-anim ; ! Native American
- kiisethw    N-anim ; ! sun, moon, month
- saapwahkiih N-inan ; ! street
- @P.EM.T@sooniaah N-inan ; ! money
+ ineni                N-anim ; ! man
+ niicaap              N-anim ; ! doll
+ asamaakaah           N-anim ; ! soldier
+ methoon              N-inan ; ! boat
+ @P.EM.T@koohkoos     N-anim ; ! pig
+ eenikw               N-anim ; ! ant
+ moopi                N-anim ; ! automobile
+ ahkohkw              N-anim ; ! bucket
+ miin                 N-anim ; ! berry
+ sekwaahkw            N-anim ; ! cedar tree
+ anaakw               N-anim ; ! star
+ atheny               N-inan ; ! stone
+ ooteen               N-inan ; ! town
+ saethien             N-inan ; ! hunger
+ maateth              N-inan ; ! knife
+ oteemin              N-inan ; ! strawberry
+ mehtekw              N-inan ; ! tree, stick
+ kiisekw              N-inan ; ! sky
+ paas                 N-anim ; ! bus
+ mehtotheeni          N-anim ; ! Native American
+ kiisethw             N-anim ; ! sun, moon, month
+ saapwahkiih          N-inan ; ! street
+ @P.EM.T@sooniaah     N-inan ; ! money
 
 LEXICON N-preq-t
  -ky        N-anim ; ! mother
@@ -51,33 +51,35 @@ LEXICON N-inan
  @U.ANIM.F@ N-iposs ;
 
 LEXICON N-iposs
- @R.EM.T@@U.IPOSS.T@%<poss%>:@R.EM.T@@U.IPOSS.T@em N-poss-post ;
- @D.EM@@U.IPOSS.T@%<poss%>:@D.EM@@U.IPOSS.T@ N-poss-post ;
- @U.IPOSS.F@ N-suff ;
+ @R.EM.T@@D.POSS.NONE@%<poss%>:@R.EM.T@@D.POSS.NONE@%{e%}m N-poss-post ;
+ @D.EM@@D.POSS.NONE@%<poss%>:@D.EM@@D.POSS.NONE@           N-poss-post ;
+ @R.POSS.NONE@ N-suff ;
 
 LEXICON N-poss-post
- @U.POSS.1SG@%<1%>%<sg%>:@U.POSS.1SG@         N-suff ;
- @U.POSS.2SG@%<2%>%<sg%>:@U.POSS.2SG@         N-suff ;
- @U.POSS.3SG@%<3%>%<sg%>:@U.POSS.3SG@         N-suff ;
- @U.POSS.1IN@%<1%>%<incl%>:@U.POSS.1IN@^enaan N-suff ;
- @U.POSS.1EX@%<1%>%<excl%>:@U.POSS.1EX@^enaan N-suff ;
- @U.POSS.2PL@%<2%>%<pl%>:@U.POSS.2PL@^wa      N-suff ;
- @U.POSS.3PL@%<3%>%<pl%>:@U.POSS.3PL@^wa      N-suff ;
+ @U.POSS.1SG@%<1%>%<sg%>:@U.POSS.1SG@             N-suff ;
+ @U.POSS.2SG@%<2%>%<sg%>:@U.POSS.2SG@             N-suff ;
+ @U.POSS.3SG@%<3%>%<sg%>:@U.POSS.3SG@             N-suff ;
+ @U.POSS.1IN@%<1%>%<incl%>:@U.POSS.1IN@^%{e%}naan N-suff ;
+ @U.POSS.1EX@%<1%>%<excl%>:@U.POSS.1EX@^%{e%}naan N-suff ;
+ @U.POSS.2PL@%<2%>%<pl%>:@U.POSS.2PL@^%{w%}a      N-suff ;
+ @U.POSS.3PL@%<3%>%<pl%>:@U.POSS.3PL@^%{w%}a      N-suff ;
 
 LEXICON N-suff
  @U.ANIM.T@ N-suff-anim   ;
  @U.ANIM.F@ N-suff-inan ;
- %<loc%>:^eki  # ;
- %<attr%>:^eki # ; ! TODO redirect correctly instead of ending word
- %<prep%>:^e   # ;
+ %<loc%>:^%{e%}ki  # ;
+ %<attr%>:^i # ; ! TODO redirect correctly instead of ending word
+ %<prep%>:^e       # ;
 
 LEXICON N-suff-anim
- %<sg%>%<prox%>:^a    # ;
- %<sg%>%<obv%>:^ani   # ;
- %<sg%>%<voc%>:^%{e%} # ;
- %<pl%>%<prox%>:^aki  # ;
- %<pl%>%<obv%>:^ahi   # ;
- %<pl%>%<voc%>:^etike # ;
+ @D.POSS.3SG@@D.POSS.3PL@%<sg%>%<prox%>:@D.POSS.3SG@@D.POSS.3PL@^a # ;
+ %<sg%>%<obv%>:^%{a%}ni # ;
+ @R.POSS.1SG@%<sg%>%<voc%>:@R.POSS.1SG@^%{voce%} # ;
+ @R.POSS.NONE@%<sg%>%<voc%>:@R.POSS.NONE@^%{voce%} # ;
+ @D.POSS.3SG@@D.POSS.3PL@%<pl%>%<prox%>:@D.POSS.3SG@@D.POSS.3PL@^%{a%}ki # ;
+ %<pl%>%<obv%>:^%{a%}hi # ;
+ @R.POSS.1SG@%<pl%>%<voc%>:@R.POSS.1SG@^%{e%}tike # ;
+ @R.POSS.NONE@%<pl%>%<voc%>:@R.POSS.NONE@^%{e%}tike # ;
 
 LEXICON N-suff-inan
  %<sg%>:^i   # ;

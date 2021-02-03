@@ -16,7 +16,7 @@ kickapoo_lexicon.lexc : root.lexc nouns.lexc verbs.lexc
 	cat root.lexc nouns.lexc verbs.lexc > kickapoo_lexicon.lexc
 
 kickapoo_gen.hfst : kickapoo_lexicon.lexc kickapoo_sc.twol
-	hfst-lexc <kickapoo_lexicon.lexc >kickapoo_gen.hfst
+	hfst-lexc < kickapoo_lexicon.lexc > kickapoo_gen.hfst
 	hfst-twolc -o kickapoo_sc.hfst kickapoo_sc.twol
 	hfst-compose-intersect -1 kickapoo_gen.hfst -2 kickapoo_sc.hfst -o kickapoo_gen_sc.hfst
 

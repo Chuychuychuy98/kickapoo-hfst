@@ -9,14 +9,20 @@ aa ee ii oo
 %{k%}:k
 %{o%}:o
 %{tc%}:t
-%{sθ%}:θ
+%{sth%}:th
 %{e%}:e
+%{voce%}:e
+%{w%}:w
+%{a%}:a
 ;
 
 Sets
 
 Con = p t c k th s h m n w y
       P T C K    S H M N W Y ;
+
+NSCon = p t c k th h m n w y
+        P T C K    H M N W Y ;
 
 Vow = a e i o aa ee ii oo
       A E I O ;
@@ -47,13 +53,64 @@ Rules
   %{tc%}:c <=> _ %^: i: ;
 
 "s/θ to s before i"
-  %{sθ%}:s <=> _ %^: i: ;
+  %{sth%}:s <=> _ %^: i: ;
 
 "singular vocative deleted after final long vowel h"
-  %{e%}:0 <=> LVow: h: %^: _ ;
+  %{voce%}:0 <=> LVow: h: %^: _ ;
 
 "final h drops between long weak vowel and singular vocative"
-  h:0 <=> LVow: _ %^: %{e%}: ;
+  h:0 <=> LVow: _ %^: %{voce%}: ;
 
 "long weak vowel is shortened for singular vocative"
-  [aa:a | ee:e | ii:i | oo:o] <=> _ h: %^: %{e%}: ;
+  [aa:a | ee:e | ii:i | oo:o] <=> _ h: %^: %{voce%}: ;
+
+"vowel lengthens before G3 suffix or -wa"
+  [a:aa | e:ee | i:ii | o:oo] <=> _ %^: [%{e%}: | %{w%}: ] ;
+
+"G3 suffix loses e after vowel"
+  %{e%}:0 <=> Vow: %^: _ ;
+
+"vowel shortens before a G2 suffix"
+  [aa:a | ee:e | ii:i | oo:o] <=> _ %^: %{a%}: ;
+
+"we > o in some suffixes (e part)"
+  %{e%}:o <=> w: %^: _ ;
+
+"we > o in some suffixes (w part)"
+  w:0 <=> _ %^: :e ;
+
+"ww > o pt. 1"
+  w:o <=> _ %^: :w ;
+
+"ww > o pt. 2"
+  w:0 <=> w: %^ _ ;
+
+"y > 0 between s and a"
+  y:0 <=> s: _ %^: :a ;
+
+"y > 0 before i"
+  y:0 <=> _ %^: :i ;
+
+"ya > ie after consonant other than s pt. 1"
+  y:i <=> NSCons: _  %^: :a ;
+
+"ya > ie after consonant other than s pt. 2"
+  %{a%}:e <=> NSCons: y: %^ _ ;
+
+"ya > ee after s or a pt. 1"
+  y:e <=> [s: | a: ] _ %^: :a ;
+
+"ya > ee after s or a pt. 2"
+  %{a%}:e <=> [s: | a: ] y: %^: _ ;
+
+"ye and yw > i and iw after consonant other than s pt. 1"
+  y:i <=> NSCons: _ %^: :e ;
+
+"ye and yw > i and iw after consonant other than s pt. 2"
+  %{e%}:0 <=> NSCons: y: %^: _ ;
+
+"ye and yw > ii and iiw after s pt. 1"
+  y:ii <=> s: _ %^: :e ;
+
+"ye and yw > ii and iiw after s pt. 2"
+  %{e%}:0 <=> s: y: %^: _ ;
